@@ -7,20 +7,21 @@
  * CAUTION: use this sketch with your own risk. I take no responsibility if this program causes any damage
  */
 
-#include "../RF24.h"
-#include "../nRF24L01.h"
-#include "../printf.h"
+#include "RF24.h"
+#include "nRF24L01.h"
+#include "printf.h"
 #include <SPI.h>
 
 #define BUTTON_1 A0		// everytime this button clicked will trigger LED changing in the receiver
 
 const uint8_t pipe_address[][6] = {"1Node"};	// this address value is too big for an literal integer,
 												// that's why LL is added to convert its type to 'long long'
-uint8_t temp = 0x01;
+uint8_t ON = 0x01;
+uint8_t OFF = 0x00;
 RF24 transmitter(7,8);		// Pin 7 is for Chip Enable (CE) while Pin 8 is for SPI Chip select (CSN)
 void setup() {
 	// Set up Serial monitor
-	Serial.begin(9600);
+	Serial.begin(57600);
 	printf_begin();
 
 	// Set up BUTTON_1 as input
@@ -29,17 +30,20 @@ void setup() {
 	transmitter.openWritingPipe(pipe_address[0]);
 	transmitter.powerUp();
 	transmitter.printDetails(); // Print basic parameters of RF24
+	delay(100);
 }
 
 void loop() {
-	Serial.println("Now sending...");
-	if ( transmitter.write(&temp,1) ){
-		Serial.println("Succeed!");
+	if (digitalRead(BUTTON_1)){
+		if (transmitter.write(&ON,1)){
+			Serial.println("ON Transfer succeed!");
+		}
 	}
-	else {
-		Serial.println("Failed!");
-	}
-	temp++;
-	delay(1000);
+	else
+		if (transmitter.write(&OFF,1)) {
+			Serial.println("OFF Transfer succeed");
+		}
+	delay(100);
 }
+
 

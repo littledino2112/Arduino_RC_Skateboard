@@ -8,8 +8,8 @@
  */
 
 #include "RF24.h"
-#include "../nRF24L01.h"
-#include "../printf.h"
+#include "nRF24L01.h"
+#include "printf.h"
 #include <SPI.h>
 
 #define LED_1 6		// Indicator LED
@@ -19,7 +19,7 @@ uint8_t got_byte;
 RF24 receiver(7,8);			// Pin 7 is for Chip Enable (CE) while Pin 8 is for SPI Chip select (CSN)
 void setup() {
 	// Serial monitor set-up
-	Serial.begin(9600);
+	Serial.begin(57600);
 	printf_begin();
 
 	// Set up LED_1 for indicator output
@@ -38,8 +38,17 @@ void loop() {
 		receiver.read(&got_byte,1);
 		Serial.print("Received data: ");
 		Serial.println(got_byte);
-		delay(100);
+		if (got_byte == 0x00){
+			digitalWrite(LED_1, LOW);
+		}
+		else if (got_byte == 0x01){
+			digitalWrite(LED_1, HIGH);
+		}
+		else {
+			Serial.println ("Invalid value");
+		}
 	}
+	delay(100);
 
 }
 
