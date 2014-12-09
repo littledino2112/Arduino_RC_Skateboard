@@ -8,8 +8,8 @@
  */
 
 #include "RF24.h"
-#include "nRF24L01.h"
-#include "printf.h"
+#include "../nRF24L01.h"
+#include "../printf.h"
 #include <SPI.h>
 
 #define LED_1 6		// Indicator LED

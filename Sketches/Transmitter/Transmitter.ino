@@ -7,9 +7,9 @@
  * CAUTION: use this sketch with your own risk. I take no responsibility if this program causes any damage
  */
 
-#include "RF24.h"
-#include "nRF24L01.h"
-#include "printf.h"
+#include "../RF24.h"
+#include "../nRF24L01.h"
+#include "../printf.h"
 #include <SPI.h>
 
 #define BUTTON_1 A0		// everytime this button clicked will trigger LED changing in the receiver
