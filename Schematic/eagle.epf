@@ -1,0 +1,39 @@
+[Eagle]
+Version="07 02 00"
+Platform="Mac OS X"
+Serial="62191E841E-LSR-WLM-1EL"
+Globals="Globals"
+Desktop="Desktop"
+
+[Globals]
+AutoSaveProject=1
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/Adafruit-Eagle-Library-master/adafruit.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/MyLibrary/PowerManagement.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/LilyPad-Wearables.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Aesthetics.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-AnalogIC.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Boards.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Capacitors.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Connectors.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-DigitalIC.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-DiscreteSemi.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Displays.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Electromechanical.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-FreqCtrl.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-LED.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Passives.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-PowerIC.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-RF.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Resistors.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Retired.lbr"
+UsedLibrary="/Users/littledino2112/Google Drive/Eagle/External Lib/SparkFun-Eagle-Libraries-master/SparkFun-Sensors.lbr"
+
+[Win_1]
+Type="Control Panel"
+Loc="37 63 1279 795"
+State=1
+Number=0
+
+[Desktop]
+Screen="1280 800"
+Window="Win_1"
