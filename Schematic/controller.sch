@@ -14,7 +14,7 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="16" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
@@ -44,7 +44,7 @@
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="14" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
@@ -7063,7 +7063,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY14" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="3V3"/>
 <part name="SUPPLY16" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="5V_REG"/>
 <part name="SUPPLY17" library="supply2" deviceset="GND" device=""/>
-<part name="Q1" library="adafruit" deviceset="CRYSTAL" device="HC49S" value="16MHZ"/>
+<part name="Q1" library="adafruit" deviceset="CRYSTAL" device="HC49S" value="16MHZ">
+<attribute name="SOURCE" value="http://thegioiic.com/products/16mhz-crystal-hc49-dip"/>
+</part>
 <part name="C4" library="SparkFun-Capacitors" deviceset="22PF-50V-5%(0603)" device="" value="22pF">
 <attribute name="PKG" value="0603"/>
 <attribute name="SOURCE" value="http://thegioiic.com/products/0603-22pf-50v-cap"/>
@@ -7223,6 +7225,7 @@ I_out = 250mA</text>
 <instance part="Q1" gate="G$1" x="160.02" y="99.06" smashed="yes" rot="R90">
 <attribute name="NAME" x="165.1" y="98.044" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="165.1" y="96.52" size="1.778" layer="96" rot="R180"/>
+<attribute name="SOURCE" x="160.02" y="99.06" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="C4" gate="G$1" x="152.4" y="101.6" smashed="yes" rot="R90">
 <attribute name="NAME" x="149.479" y="103.124" size="1.778" layer="95" rot="R90"/>
@@ -7241,7 +7244,7 @@ I_out = 250mA</text>
 <instance part="SUPPLY21" gate="G$1" x="162.56" y="139.7"/>
 <instance part="SUPPLY22" gate="GND" x="180.34" y="139.7" rot="R90"/>
 <instance part="SUPPLY23" gate="G$1" x="83.82" y="91.44"/>
-<instance part="LI-PO" gate="G$1" x="55.88" y="68.58" rot="R180"/>
+<instance part="LI-PO" gate="G$1" x="40.64" y="68.58"/>
 <instance part="D5" gate="G$1" x="81.28" y="152.4">
 <attribute name="SOURCE" x="81.28" y="152.4" size="1.778" layer="96" display="off"/>
 </instance>
@@ -7319,16 +7322,6 @@ I_out = 250mA</text>
 <busses>
 </busses>
 <nets>
-<net name="N$2" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="SWC"/>
-<wire x1="60.96" y1="152.4" x2="71.12" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="D5" gate="G$1" pin="A"/>
-<pinref part="Q2" gate="G$1" pin="C"/>
-<wire x1="71.12" y1="152.4" x2="78.74" y2="152.4" width="0.1524" layer="91"/>
-<junction x="71.12" y="152.4"/>
-</segment>
-</net>
 <net name="GND" class="0">
 <segment>
 <pinref part="C2" gate="G$1" pin="2"/>
@@ -7398,11 +7391,6 @@ I_out = 250mA</text>
 <pinref part="SUPPLY19" gate="GND" pin="GND"/>
 <pinref part="U$2" gate="G$1" pin="1"/>
 <wire x1="241.3" y1="43.18" x2="246.38" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="LI-PO" gate="G$1" pin="2"/>
-<pinref part="SUPPLY9" gate="GND" pin="GND"/>
-<wire x1="48.26" y1="66.04" x2="48.26" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C7" gate="G$1" pin="2"/>
@@ -7478,25 +7466,21 @@ I_out = 250mA</text>
 <wire x1="96.52" y1="25.4" x2="96.52" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="SUPPLY35" gate="GND" pin="GND"/>
 </segment>
+<segment>
+<pinref part="LI-PO" gate="G$1" pin="1"/>
+<pinref part="SUPPLY9" gate="GND" pin="GND"/>
+<wire x1="48.26" y1="68.58" x2="48.26" y2="63.5" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="COMP"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="40.64" y1="144.78" x2="35.56" y2="144.78" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="144.78" x2="35.56" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="35.56" y1="142.24" x2="35.56" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="144.78" x2="35.56" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="124.46" x2="35.56" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="124.46" x2="35.56" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="JP3" gate="G$1" pin="1"/>
-<wire x1="15.24" y1="139.7" x2="15.24" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="15.24" y1="142.24" x2="25.4" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="25.4" y1="142.24" x2="25.4" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="142.24" x2="25.4" y2="142.24" width="0.1524" layer="91"/>
-<junction x="25.4" y="142.24"/>
 </segment>
 </net>
 <net name="V_BAT" class="0">
@@ -7504,8 +7488,8 @@ I_out = 250mA</text>
 <pinref part="U$1" gate="G$1" pin="BAT"/>
 <wire x1="50.8" y1="78.74" x2="48.26" y2="78.74" width="0.1524" layer="91"/>
 <label x="43.18" y="78.74" size="1.778" layer="95"/>
-<pinref part="LI-PO" gate="G$1" pin="1"/>
-<wire x1="48.26" y1="78.74" x2="48.26" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="LI-PO" gate="G$1" pin="2"/>
+<wire x1="48.26" y1="71.12" x2="48.26" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY13" gate="G$1" pin="VCC"/>
@@ -7726,22 +7710,28 @@ I_out = 250mA</text>
 <pinref part="U1" gate="G$1" pin="SEN"/>
 <wire x1="40.64" y1="149.86" x2="30.48" y2="149.86" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="149.86" x2="30.48" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="L1" gate="G$1" pin="1"/>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="43.18" y1="160.02" x2="25.4" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="160.02" x2="25.4" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="157.48" x2="25.4" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="154.94" x2="25.4" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="154.94" x2="25.4" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="25.4" y1="157.48" x2="27.94" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="L1" gate="G$1" pin="1"/>
+<wire x1="43.18" y1="160.02" x2="25.4" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
 <pinref part="L1" gate="G$1" pin="2"/>
 <wire x1="58.42" y1="160.02" x2="71.12" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="160.02" x2="71.12" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="D5" gate="G$1" pin="A"/>
+<pinref part="Q2" gate="G$1" pin="C"/>
+<wire x1="71.12" y1="152.4" x2="78.74" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="SWC"/>
+<wire x1="60.96" y1="152.4" x2="71.12" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="160.02" x2="71.12" y2="152.4" width="0.1524" layer="91"/>
+<junction x="71.12" y="152.4"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -7994,9 +7984,45 @@ I_out = 250mA</text>
 <label x="220.98" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="C2" gate="G$1" pin="1"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="25.4" y1="142.24" x2="25.4" y2="137.16" width="0.1524" layer="91"/>
+<junction x="25.4" y="142.24"/>
+<wire x1="15.24" y1="142.24" x2="25.4" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="JP3" gate="G$1" pin="1"/>
+<wire x1="15.24" y1="139.7" x2="15.24" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="VCC"/>
+<wire x1="40.64" y1="147.32" x2="30.48" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="147.32" x2="30.48" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="142.24" x2="25.4" y2="142.24" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="201,1,96.52,40.64,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,241.3,137.16,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,88.9,157.48,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,7.62,147.32,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,114.3,154.94,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,139.7,172.72,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,83.82,91.44,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,162.56,139.7,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,218.44,38.1,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,154.94,121.92,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="201,1,165.1,172.72,VCC,VCC\, 3V3\, 5V_REG\, V_USB\, V_BAT\, V_BOOST,,,,"/>
+<approved hash="202,1,88.9,10.16,IC2G2,-IN2,,,,"/>
+<approved hash="202,1,88.9,5.08,IC2G2,+IN2,,,,"/>
+<approved hash="206,1,160.02,170.18,3V3,,,,,"/>
+<approved hash="206,1,160.02,167.64,3V3,,,,,"/>
+<approved hash="208,1,165.1,172.72,3V3,sup,,,,"/>
+<approved hash="208,1,160.02,170.18,3V3,out,,,,"/>
+<approved hash="208,1,160.02,167.64,3V3,out,,,,"/>
+<approved hash="208,1,218.44,38.1,3V3,sup,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
